@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCalc - Calculadora de Huella de Carbono</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">🌱 EcoCalc</h1>
+                <p class="hero-subtitle">Descubre tu huella de carbono personal y cómo reducirla</p>
+                <div class="aws-badge">Construido con Amazon Q Developer</div>
+            </div>
+        </header>
+
+        <main class="calculator">
+            <form id="carbonForm" class="form">
+                <div class="form-section">
+                    <h2>🚗 Transporte</h2>
+                    <div class="input-group">
+                        <label>Kilómetros en auto por semana:</label>
+                        <input type="number" id="carKm" min="0" value="100" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Vuelos al año:</label>
+                        <input type="number" id="flights" min="0" value="2" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>🏠 Hogar</h2>
+                    <div class="input-group">
+                        <label>Consumo eléctrico mensual (kWh):</label>
+                        <input type="number" id="electricity" min="0" value="300" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Tipo de calefacción:</label>
+                        <select id="heating" required>
+                            <option value="gas">Gas natural</option>
+                            <option value="electric">Eléctrica</option>
+                            <option value="renewable">Renovable</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>🍽️ Alimentación</h2>
+                    <div class="input-group">
+                        <label>Comidas con carne por semana:</label>
+                        <input type="number" id="meat" min="0" max="21" value="10" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="calculate-btn">Calcular Mi Huella 🌍</button>
+            </form>
+
+            <div id="results" class="results hidden">
+                <div class="result-card">
+                    <h2>Tu Huella de Carbono Anual</h2>
+                    <div class="carbon-display">
+                        <span id="totalCarbon" class="carbon-number">0</span>
+                        <span class="carbon-unit">toneladas CO₂</span>
+                    </div>
+                    <div class="comparison">
+                        <span id="comparison-text"></span>
+                    </div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>Desglose por categoría:</h3>
+                    <div class="breakdown-items">
+                        <div class="breakdown-item">
+                            <span class="category">🚗 Transporte</span>
+                            <span id="transport-carbon" class="value">0 ton</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="category">🏠 Hogar</span>
+                            <span id="home-carbon" class="value">0 ton</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="category">🍽️ Alimentación</span>
+                            <span id="food-carbon" class="value">0 ton</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips">
+                    <h3>💡 Tips para reducir tu huella:</h3>
+                    <ul id="tips-list"></ul>
+                </div>
+
+                <button id="recalculate" class="recalculate-btn">Calcular de nuevo</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Creado para <strong>Nerdearla 2024</strong> con ❤️ y Amazon Q Developer</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
