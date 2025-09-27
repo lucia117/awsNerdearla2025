@@ -63,4 +63,4 @@ Esta calculadora ayuda a crear conciencia sobre nuestro impacto ambiental y prop
 
 ---
 
-**Desarrollado con ❤️ para Nerdearla 2024 usando Amazon Q Developer**
+**Desarrollado con ❤️ para Nerdearla 2025 usando Amazon Q Developer**
